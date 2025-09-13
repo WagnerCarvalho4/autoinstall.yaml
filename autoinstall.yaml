@@ -15,8 +15,7 @@ autoinstall:
     install: all
   packages:
     - gnome-software-plugin-flatpak 
-    - gnome-tweaks 
-    - ubuntu-restricted-extras -y
+    - gnome-tweaks
     - unrar 
     - ssh 
     - libgxps-utils 

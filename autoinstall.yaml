@@ -3,7 +3,6 @@ autoinstall:
   identity:
     hostname: Ubuntu-PC
     username: usuario
-# a senha de exemplo é: 123
     password: "$6$n8LbrKbn28CT9sfQ$scOE7QBlK4wKDSzsaxrINac5vJZDSdjocWHjYe3iAZ.v6pC4iPGzK1LT/xp5dRCpizaVXZlzpDVDk3liBwdyf1"
   locale: pt_BR.utf8
   keyboard:

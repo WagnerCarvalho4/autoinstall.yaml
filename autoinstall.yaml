@@ -1,0 +1,36 @@
+autoinstall:
+  version: 1
+  identity:
+    hostname: Ubuntu-PC
+    username: usuario
+# a senha de exemplo é: 123
+    password: "$6$n8LbrKbn28CT9sfQ$scOE7QBlK4wKDSzsaxrINac5vJZDSdjocWHjYe3iAZ.v6pC4iPGzK1LT/xp5dRCpizaVXZlzpDVDk3liBwdyf1"
+  locale: pt_BR.utf8
+  keyboard:
+    layout: br
+  timezone: "America/Maceio"
+  codecs:
+    install: true
+  drivers:
+    install: all
+  packages:
+    - gnome-software-plugin-flatpak 
+    - gnome-tweaks 
+    - ubuntu-restricted-extras -y
+    - unrar 
+    - ssh 
+    - libgxps-utils 
+    - p7zip-full 
+    - p7zip-rar 
+    - neofetch 
+    - htop
+  late-commands:
+    - curtin in-target -- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - curtin in-target -- apt install -y ./google-chrome-stable_current_amd64.deb
+    - curtin in-target -- wget https://download.anydesk.com/linux/anydesk_7.0.2-1_amd64.deb
+    - curtin in-target -- apt install -y ./anydesk_7.0.2-1_amd64.deb
+    - curtin in-target -- flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    - curtin in-target -- flatpak install flathub com.mattjakeman.ExtensionManager -y
+    - curtin in-target -- timedatectl set-local-rtc 1 --adjust-system-clock
+  update: all
+  shutdown: reboot

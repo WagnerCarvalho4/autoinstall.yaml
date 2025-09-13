@@ -1,17 +1,13 @@
 autoinstall:
   version: 1
   identity:
-    hostname: Ubuntu-PC
+    realname: 'Ubuntu-PC'
     username: usuario
     password: "$6$n8LbrKbn28CT9sfQ$scOE7QBlK4wKDSzsaxrINac5vJZDSdjocWHjYe3iAZ.v6pC4iPGzK1LT/xp5dRCpizaVXZlzpDVDk3liBwdyf1"
   locale: pt_BR.utf8
   keyboard:
     layout: br
-  timezone: "America/Maceio"
-  codecs:
-    install: true
-  drivers:
-    install: all
+  timezone: "America/Sao_Paulo"
   packages:
     - gnome-software-plugin-flatpak 
     - gnome-tweaks
@@ -22,5 +18,9 @@ autoinstall:
     - p7zip-rar 
     - neofetch 
     - htop
+  codecs:
+    install: true
+  drivers:
+    install: all
   update: all
   shutdown: reboot
